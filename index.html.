@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aly Phone Shop</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #090909;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+header {
+  text-align: center;
+  padding: 25px 12px;
+  background: #111;
+  border-bottom: 2px solid #d4af37;
+}
+h1 { color: #d4af37; margin: 0; }
+header p { color: #ddd; }
+.hero {
+  text-align: center;
+  padding: 35px 15px;
+}
+.hero h2 { color: #d4af37; }
+.hero p { color: #ccc; }
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 12px;
+}
+.product {
+  background: #181818;
+  border: 1px solid #51421c;
+  border-radius: 12px;
+  padding: 15px 8px;
+  text-align: center;
+}
+.phone { font-size: 48px; }
+.product h3 { font-size: 16px; }
+.price {
+  color: #d4af37;
+  font-weight: bold;
+}
+button {
+  background: #d4af37;
+  color: #090909;
+  border: 0;
+  border-radius: 7px;
+  padding: 11px 8px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}
+.contact {
+  margin: 20px 12px;
+  padding: 22px 15px;
+  background: #181818;
+  border-radius: 12px;
+  text-align: center;
+}
+.contact h2 { color: #d4af37; }
+footer {
+  padding: 20px;
+  text-align: center;
+  color: #aaa;
+  font-size: 13px;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>ALY PHONE SHOP</h1>
+  <p>La technologie à votre portée</p>
+</header>
+
+<section class="hero">
+  <h2>Bienvenue chez Aly Phone Shop</h2>
+  <p>Découvrez nos téléphones et contactez-nous pour commander.</p>
+</section>
+
+<section class="products">
+  <div class="product">
+    <div class="phone">📱</div>
+    <h3>iPhone</h3>
+    <p class="price">Prix sur demande</p>
+    <button onclick="commander('iPhone')">Commander</button>
+  </div>
+  <div class="product">
+    <div class="phone">📱</div>
+    <h3>Samsung</h3>
+    <p class="price">Prix sur demande</p>
+    <button onclick="commander('Samsung')">Commander</button>
+  </div>
+  <div class="product">
+    <div class="phone">📱</div>
+    <h3>TECNO</h3>
+    <p class="price">Prix sur demande</p>
+    <button onclick="commander('TECNO')">Commander</button>
+  </div>
+  <div class="product">
+    <div class="phone">📱</div>
+    <h3>Infinix</h3>
+    <p class="price">Prix sur demande</p>
+    <button onclick="commander('Infinix')">Commander</button>
+  </div>
+</section>
+
+<section class="contact">
+  <h2>Une question ?</h2>
+  <p>Contactez-nous sur WhatsApp pour connaître les prix et commander.</p>
+  <button onclick="contacter()">Contacter la boutique</button>
+</section>
+
+<footer>
+  © 2026 Aly Phone Shop — Tous droits réservés.
+</footer>
+
+<script>
+const numeroWhatsApp = "";
+function commander(produit) {
+  if (!numeroWhatsApp) {
+    alert("Le numéro WhatsApp de la boutique doit encore être ajouté.");
+    return;
+  }
+  const message = encodeURIComponent(
+    "Bonjour Aly Phone Shop, je souhaite commander : " + produit
+  );
+  window.open("https://wa.me/" + numeroWhatsApp + "?text=" + message, "_blank");
+}
+function contacter() {
+  commander("Je souhaite des renseignements sur les téléphones");
+}
+</script>
+</body>
+</html>
